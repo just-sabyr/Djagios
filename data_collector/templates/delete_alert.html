@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Delete Alert</h1>
+<p>Are you sure you want to delete this alert?</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Delete" />
+    <a href="{% url 'data_collector:alerts-list' %}">Cancel</a>
+</form>
+
+{% endblock content %}
